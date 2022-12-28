@@ -1,7 +1,7 @@
 # Communication_LTD
 A secure website built with Flask & MySQL.
 
-# Creating the MySQL database
+## Creating the MySQL database
 To create the same database we used, please follow this simple procedure:
 1. In your MySQL instance, create a new database called 'communication_ltd'.
 2. Run the following MySQL query:

@@ -1,7 +1,10 @@
 # Communication_LTD
 A secure website built with Flask & MySQL.
 
-**Important Note: The project is activly being developed at the moment.**
+***Important Note:** The project is activly being developed at the moment.
+
+<br>
+
 
 ## Creating the MySQL database
 To create the same database we used, please follow this simple procedure:

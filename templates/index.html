@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.welcome {
+  background-color: #333;
+  color: rgb(7, 181, 100);
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+
+button:hover {
+  opacity: 0.8;
+}
+</style>
+
+</head>
+<body>
+  
+  <!-- Navbar  -->
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+
+    {% if session['name'] %}
+      <a class="welcome">Hello {{ session['name'] }}!</a>
+      <a href="/logout">Logout</a>
+    {% else %}
+      <a href="/login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+      <a href="/register" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</a>
+    {% endif %}
+
+    <a href="#about">About</a>
+  </div>
+  
+  <br>
+  <br>
+
+  <!-- HTML body  -->
+  <h1 style="text-align:center">.::. Comunication_LTD Store .::.</h1>
+  <p style="text-align:center">Choose the package that fits you the most!</p>
+
+  <br>
+  <br>
+
+  <div class="columns">
+    <ul class="price">
+      <li class="header">Basic</li>
+      <li class="grey">$ 9.99 / year</li>
+      <li>10GB Storage</li>
+      <li>10 Emails</li>
+      <li>10 Domains</li>
+      <li>1GB Bandwidth</li>
+      <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+  </div>
+
+  <div class="columns">
+    <ul class="price">
+      <li class="header" style="background-color:#04AA6D">Pro</li>
+      <li class="grey">$ 24.99 / year</li>
+      <li>25GB Storage</li>
+      <li>25 Emails</li>
+      <li>25 Domains</li>
+      <li>2GB Bandwidth</li>
+      <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+  </div>
+
+  <div class="columns">
+    <ul class="price">
+      <li class="header">Premium</li>
+      <li class="grey">$ 49.99 / year</li>
+      <li>50GB Storage</li>
+      <li>50 Emails</li>
+      <li>50 Domains</li>
+      <li>5GB Bandwidth</li>
+      <li class="grey"><a href="#" class="button">Sign Up</a></li>
+    </ul>
+  </div>
+
+</body>
+</html>

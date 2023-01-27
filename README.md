@@ -12,7 +12,7 @@ GRADE : 100 of 100.
 <br>
 
 
-### Installation:
+## Installation:
 1. Creating the MySQL database.
 2. Install flask and other dependencies
 3. Create a self-signed certificate.

@@ -1,0 +1,4 @@
+Flask==2.2.2
+Flask_Mail==0.9.1
+Flask_MySQLdb==1.0.1
+python_bcrypt==0.3.2

@@ -1,26 +1,52 @@
 # Communication_LTD
 A secure website built with Flask & MySQL.
 
-***Important Note:** The project is activly being developed at the moment.
+## Summary
+This website made as a final project for a study project, made in a group of 3 people.
 
+This project include two versions of this website:
+1. Vulnerable Version - created to demonstrate some MySQL & Stored-Xss vulnerabilities & bad practices.
+2. Secured Version - a safe version of the same website (without the vulnerabilities).
+
+GRADE : 100 of 100.
 <br>
 
 
-## Creating the MySQL database
+### Installation:
+1. Creating the MySQL database
+2. Install flask and other dependencies
+3. Create a self-signed certificate.
+4. Run the App.py file
+
+
+## 1. Creating the MySQL database
 To create the same database we used, please follow this simple procedure:
 1. In your MySQL instance, create a new database called 'communication_ltd'.
 2. Run the following MySQL query:
 ```
 CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `userid` int NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(30) DEFAULT NULL,
   `LastName` varchar(30) DEFAULT NULL,
-  `Email` varchar(35) NOT NULL,
-  `Username` varchar(35) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `Username` varchar(50) NOT NULL,
   `Password` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`,`Email`,`Username`,`Password`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `WrongLoginAttemptCount` int DEFAULT '0',
+  `Token` varchar(255) DEFAULT NULL,
+  `TokenDate` datetime DEFAULT NULL,
+  `Admin` tinyint DEFAULT '0',
+  PRIMARY KEY (`userid`,`Email`,`Username`,`Password`)
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `passwords_history` (
+  `userid` int NOT NULL,
+  `Password` varchar(100) NOT NULL,
+  `DateChanged` datetime NOT NULL,
+  PRIMARY KEY (`userid`,`Password`,`DateChanged`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
+
+After you ran this long query you should be able to see 2 new tables appear in your database.
 
 ## Actual Images
 ![image](https://user-images.githubusercontent.com/18194032/209861919-232b8565-b680-45cf-9212-c3c3cf42e808.png)

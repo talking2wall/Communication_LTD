@@ -46,7 +46,7 @@ CREATE TABLE `passwords_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 
-After you ran this long query you should be able to see 2 new tables appear in your database.
+After you ran this long query, you should be able to see 2 new tables appear in your database.
 
 ## Actual Images
 ![image](https://user-images.githubusercontent.com/18194032/209861919-232b8565-b680-45cf-9212-c3c3cf42e808.png)

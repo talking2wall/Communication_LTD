@@ -1,8 +1,8 @@
 # Communication_LTD
-A secure website built with Flask & MySQL.
 
 ## Summary
-This website made as a final project for a study project, made in a group of 3 people.
+A secure website built with Flask & MySQL.
+This website made as a final project for a course in cyber security, made in a group of 3 students.
 
 This project include two versions of this website:
 1. Vulnerable Version - created to demonstrate some MySQL & Stored-Xss vulnerabilities & bad practices.
@@ -13,14 +13,14 @@ GRADE : 100 of 100.
 
 
 ### Installation:
-1. Creating the MySQL database
+1. Creating the MySQL database.
 2. Install flask and other dependencies
 3. Create a self-signed certificate.
-4. Run the App.py file
+4. Run the App.py file.
 
 
 ## 1. Creating the MySQL database
-To create the same database we used, please follow this simple procedure:
+To re-create the database follow these simple steps:
 1. In your MySQL instance, create a new database called 'communication_ltd'.
 2. Run the following MySQL query:
 ```

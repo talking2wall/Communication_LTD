@@ -19,7 +19,7 @@ GRADE : 100 of 100.
 4. Run the App.py file.
 
 
-## 1. Creating the MySQL database
+### 1. Creating the MySQL database
 To re-create the database follow these simple steps:
 1. In your MySQL instance, create a new database called 'communication_ltd'.
 2. Run the following MySQL query:

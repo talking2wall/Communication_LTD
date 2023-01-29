@@ -48,12 +48,12 @@ CREATE TABLE `passwords_history` (
 
 After you ran this long query, you should be able to see 2 new tables appear in your database.
 
-## 2. Install flask and other dependencies
-Download the source code, and tun this command from the main folder:
+## 2. Install Flask and other dependencies
+Download the source code, and run this command from the main folder:
 ```
 pip install -r requirements.txt
 ```
-This should install for you all the deencdencies at once.
+This should install for you all the depencdencies at once.
 
 ## 3. Create a self-signed certificate.
 You can create a self-signed certificate with the following command:

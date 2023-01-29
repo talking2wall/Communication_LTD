@@ -50,16 +50,16 @@ After you ran this long query, you should be able to see 2 new tables appear in 
 
 ## 2. Install flask and other dependencies
 Download the source code, and tun this command from the main folder:
-'''
+```
 pip install -r requirements.txt
-'''
+```
 This should install for you all the deencdencies at once.
 
-3. Create a self-signed certificate.
+## 3. Create a self-signed certificate.
 You can create a self-signed certificate with the following command:
-'''
+```
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365
-'''
+```
 the command taken from here: https://stackoverflow.com/a/10176685/4415620
 
 Note: the open-ssl library does not comes pre-compiled, so in order to use the open-ssl executable file you may want download and install *Git* (from: https://git-scm.com/), and then navigate to the folder: "\YourInstallationPath\PortableGit\usr\bin", and run the openssl.exe tool from there.

@@ -62,7 +62,7 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3
 ```
 the command taken from here: https://stackoverflow.com/a/10176685/4415620
 
-Note: the open-ssl library does not comes pre-compiled, so in order to use the open-ssl executable file you may want download and install *Git* (from: https://git-scm.com/), and then navigate to the folder: "\YourInstallationPath\PortableGit\usr\bin", and run the openssl.exe tool from there.
+Note: the open-ssl library does not come pre-compiled, so in order to use the open-ssl executable file you may want download and install *Git* (from: https://git-scm.com/), and then navigate to the folder: "\YourInstallationPath\PortableGit\usr\bin", and run the openssl.exe tool from there.
 
 After you create the self-signed certificate, you should be able to see the 'cert.pem', and 'key.pem' in the same folder where the openssl.exe called from.
 Once you have this two files, you should put them on the 'certificate' folder of this project.

@@ -46,7 +46,7 @@ CREATE TABLE `passwords_history` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 
-After you ran this long query, you should be able to see 2 new tables appear in your database.
+After you running this query, you should be able to see 2 new tables appear on your database.
 
 ## 2. Install Flask and other dependencies
 Download the source code, and run this command from the main folder:

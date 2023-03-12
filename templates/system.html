@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.welcome {
+  background-color: #333;
+  color: rgb(7, 181, 100);
+}
+
+.topnav a.welcome:hover {
+  background-color: #ddd;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.form-container {
+  background-color: #d4edda;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 25%;
+  margin: 0 auto;
+}
+
+.container-result {
+  background-color: #53ff75;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 25%;
+  margin: 0 auto;
+}
+
+input[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 50%;
+}
+
+input[type="submit"]:hover {
+  background-color: #1c7631;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 50%;
+}
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+  max-width: 25%;
+}
+.info {
+  padding: 20px;
+  background-color: #3399ff; /* blue~ish color */
+  color: white;
+  margin-bottom: 15px;
+  max-width: 25%;
+}
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+</style>
+
+</head>
+<body>
+  
+  <!-- Navbar  -->
+  {% include 'navbar.html' %}
+  <br>
+  <br>
+  <!-- HTML body  -->
+  <!-- Show Error Messages if exists -->
+  <center>
+  {% with messages = get_flashed_messages(with_categories = true) %}
+  {% if messages %}
+      {% for category, message in messages %}
+      <div class="{{ category }}">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+          {{ message }}
+      </div>
+      {% endfor %}
+  {% endif %}
+  {% endwith %}
+  </center>
+  <center><h4>Create new user:</h4></center>
+  <form action="/system" method="post">
+    <div class="form-container">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" value="{{ username }}" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" value="{{ email }}" required><br><br>
+      <center><input type="submit" value="Submit"></center>
+    </div>
+  </form>
+
+  {% if created_username %}
+    <div class="container-result">
+      <h4>The user {{ created_username|safe }} was created successfuly.</h4>
+    </div>
+  {% endif %}
+
+  <!-- Show Password field script -->
+  <script>
+    function ShowPassword(id) {
+        var x = document.getElementById(id);
+        if (x.type === "password") {
+            x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+  </script>
+
+</body>
+</html>

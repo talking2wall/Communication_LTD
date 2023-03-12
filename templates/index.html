@@ -32,6 +32,10 @@ body {
   color: rgb(7, 181, 100);
 }
 
+.topnav a.welcome:hover {
+  background-color: #ddd;
+}
+
 .topnav a.active {
   background-color: #04AA6D;
   
@@ -103,20 +107,7 @@ button:hover {
 <body>
   
   <!-- Navbar  -->
-  <div class="topnav">
-    <a class="active" href="/">Home</a>
-
-    {% if session['name'] %}
-      <a class="welcome">Hello {{ session['name'] }}!</a>
-      <a href="/vulnerable_page">Vulnerable Page</a>
-      <a href="/logout">Logout</a>
-    {% else %}
-      <a href="/login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
-      <a href="/register" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</a>
-    {% endif %}
-
-    <a href="#about">About</a>
-  </div>
+  {% include 'navbar.html' %}
   
   <br>
   <br>

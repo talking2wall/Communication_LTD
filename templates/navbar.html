@@ -1,0 +1,20 @@
+{% block navbar %}
+<div class="topnav">
+    <a class="active" href="/">Home</a>
+
+    {% if session['name'] %}
+      <a class="welcome" href="/settings">Hello {{ session['name'] }}!</a>
+
+      {% if session['admin'] %}
+        <a href="/system">System</a>
+      {% endif %}
+
+      <a href="/logout">Logout</a>
+    {% else %}
+      <a href="/login" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+      <a href="/register" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</a>
+    {% endif %}
+
+    <a href="#about">About</a>
+</div>
+{% endblock %}

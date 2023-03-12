@@ -190,6 +190,15 @@
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     }
+
+    input.PasswordCheckbox/*checkbox class name*/ {
+        width : 11px/*desired width*/;
+        height : 11px/*desired height*/;
+    }
+
+    p {
+        font-size: 10px;
+    }
 </style>
 </head>
 <body>
@@ -217,12 +226,32 @@
         <div class="container">
             <label for="uname"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" value="{{ username }}" required>
-    
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
             
+            <br><br>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+            <input type="checkbox" onclick="ShowPassword('password')">Show Password
+            <br><br><br>
+            
+            <label for="uname"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Enter password" name="confirm_psw" id="confirm_password" required>
+            <input type="checkbox" class="PasswordCheckbox" onclick="ShowPassword('confirm_password')">Show password
+            <br><br><br>
+
             <label for="psw"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="email" value="{{ email }}" required>
+            <input type="text" placeholder="Enter Email" name="email" value="{{ email }}" required>
+
+            <!-- Show Password field script -->
+            <script>
+                function ShowPassword(id) {
+                    var x = document.getElementById(id);
+                    if (x.type === "password") {
+                        x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+            </script>
         </div>
         <div class="container" style="background-color:#f1f1f1">
             <button type="submit">Sign-Up!</button>

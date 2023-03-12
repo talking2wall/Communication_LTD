@@ -6,7 +6,7 @@ This website made as a final project for a course in cyber security, made in a g
 
 This project include two versions of this website:
 1. Vulnerable Version - created to demonstrate some MySQL & Stored-Xss vulnerabilities & bad practices.
-2. Secured Version - a safe version of the same website (without the vulnerabilities).
+2. Secured Version (*will be uploaded later*) - a safe version of the same website (without the vulnerabilities).
 
 GRADE : 100 of 100.
 <br>

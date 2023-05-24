@@ -2,7 +2,7 @@
 
 ## Summary
 A secure website built with Flask & MySQL.
-This website made as a final project for a course in cyber security, made in a group of 3 students.
+This website made as a final project for a course in cyber security.
 
 This project include two versions of this website:
 1. Vulnerable Version - created to demonstrate some MySQL & Stored-Xss vulnerabilities & bad practices.

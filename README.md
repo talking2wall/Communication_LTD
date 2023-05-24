@@ -4,7 +4,7 @@
 A secure website built with Flask & MySQL.
 This website made as a final project for a course in cyber security.
 
-This project include two versions of this website:
+This project includes two versions of this website:
 1. Vulnerable Version - created to demonstrate some MySQL & Stored-Xss vulnerabilities & bad practices.
 2. Secured Version (*will be uploaded later*) - a safe version of the same website (without the vulnerabilities).
 
